@@ -12,11 +12,21 @@ class Temperature
   end
 
   def to_celsius
-    return (@f - 32) * 5.0/9.0
+    if not @f.nil?
+      return (@f - 32) * 5.0/9.0
+    end
+    if not @c.nil?
+      return @c
+    end
   end
 
   def to_fahrenheit
-    return @c * 9.0/5.0 + 32
+    if not @c.nil?
+      return @c * 9.0/5.0 + 32
+    end
+    if not @f.nil?
+      return @f
+    end
   end
 
   def self.in_fahrenheit(f_val)
